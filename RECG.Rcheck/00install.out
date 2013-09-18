@@ -1,0 +1,20 @@
+* installing *source* package ‘RECG’ ...
+** libs
+*** arch - i386
+gcc -arch i386 -std=gnu99 -I/Library/Frameworks/R.framework/Resources/include -I/Library/Frameworks/R.framework/Resources/include/i386 -DNDEBUG  -I/usr/local/include    -fPIC  -g -O2  -c funciones.c -o funciones.o
+gcc -arch i386 -std=gnu99 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/usr/local/lib -o RECG.so funciones.o -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+installing to /Users/Raul/Desktop/readECG/RECG.Rcheck/RECG/libs/i386
+*** arch - x86_64
+gcc -arch x86_64 -std=gnu99 -I/Library/Frameworks/R.framework/Resources/include -I/Library/Frameworks/R.framework/Resources/include/x86_64 -DNDEBUG  -I/usr/local/include    -fPIC  -g -O2  -c funciones.c -o funciones.o
+gcc -arch x86_64 -std=gnu99 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/usr/local/lib -o RECG.so funciones.o -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+installing to /Users/Raul/Desktop/readECG/RECG.Rcheck/RECG/libs/x86_64
+** R
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+*** arch - i386
+*** arch - x86_64
+
+* DONE (RECG)

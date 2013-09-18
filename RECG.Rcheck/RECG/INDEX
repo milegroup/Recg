@@ -1,0 +1,12 @@
+BeatDetector            BeatDetector
+CreateECGData           CreateECGData
+Delineator              Delineator
+Export.ascii            Export.ascii
+PlotDelineation         PlotDelineation
+PlotECG                 PlotECG
+RECG-package            This is a package for ECG reading and plotting
+                        ~~ package title ~~
+ReadECG.WFDB            ReadECG.WFDB
+Rms                     Rms
+WaveletDelineator       WaveletDelineator
+WaveletDetector         WaveletDetector

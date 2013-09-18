@@ -1,0 +1,8 @@
+useDynLib(RECG)
+
+#exportPattern("^[[:alpha:]]+")
+
+export("CreateECGData", "PlotECG", "ReadECG.WFDB", "BeatDetector", "Export.ascii", "WaveletDetector","Delineator", "Rms",
+		"PlotDelineation")
+
+import("signal", "waveslim")
