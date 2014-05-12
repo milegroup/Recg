@@ -1,0 +1,11 @@
+Package: RECG
+Type: Package
+Title: A package for ECG analysis
+Version: 1.1
+Date: 2013-06-04
+Author: Raul Alonso Alvarez
+Maintainer: Raul Alonso Alvarez <alonso.alvarez.raul@gmail.com>
+Description: This package (still under construction) includes functions for ECG reading, processing and plotting. It contains different different algorithms for QRS detection and an algorithm for ECG wave delineation.
+License: GPL-3
+#Depends: signal
+Packaged: 2013-09-10 17:02:19 UTC; raul
