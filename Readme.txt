@@ -1,6 +1,6 @@
 This is the RECG software package, created by Mile group (www.milegroup.net). This package is intended to be used by researchers in the area of signal processing, in particular the ECG processing. 
 This is not a stable version of the package, it is a version still under construction. This means that it may contain errors and that there is some functions that are still under tests, so it may not produce the expected results.
-In a few months we expect to deliver a new (stable) version, correcting the errors and adding more functionality.
+In a few months we expect to release a new (stable) version, correcting the errors and adding more functionality.
 
 This package was created and tested under the 3.0.2 R version. It contains C functions that are used to reduce the execution time in loops or time-consuming tasks. 
 
