@@ -7,14 +7,17 @@ This package was created and tested under the 3.0.2 R version. It contains C fun
 How to install and use the package?
 
 1 - Install the package:
-	* install.packages("RECG_1.1.tar.gz")
-	or
+	
+	* install.packages("RECG_1.1.tar.gz")	
+	or	
 	* R CMD install RECG_1.1.tar.gz
 
 2 - Once the package is installed, you should load the package
+	
 	* library(RECG)
 
 3 - Next, create a data model. The data model is an structure to save the ECG signal and processing information.
+	
 	* dm <- CreateECGDataModel()
 
 4 - Then, read the ECG file. At this moment the package only reads files with the WFDB format (http://physionet.org/physiobank/database/#ecg). Currently the package reads the 16 and 212 format, but in some cases it has problems with the 212 format. It would be advisable to modify the file format from 212 to 16 using the xform function from WFDB (http://www.physionet.org/physiotools/wag/).
