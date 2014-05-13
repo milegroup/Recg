@@ -2,7 +2,7 @@ useDynLib(RECG)
 
 #exportPattern("^[[:alpha:]]+")
 
-export("CreateECGData", "PlotECG", "ReadECG.WFDB", "BeatDetector", "Export.ascii", "WaveletDetector","Delineator", "Rms",
-		"PlotDelineation")
+export("CreateECGDataModel", "PlotECG", "ReadECG.WFDB", "BeatDetector", "ExportAscii","ECGDelineator", "Rms",
+		"PlotDelineation", "WaveletTransform", "BeatDetectorWaveletPlot", "ECGDelineatorValidation")
 
-import("signal", "waveslim")
+#import("signal")

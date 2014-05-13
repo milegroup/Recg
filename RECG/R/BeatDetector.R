@@ -27,37 +27,40 @@ BeatDetector <- function(ECGData, algorithm, channel = 1, ...){
   windowSize.samples = trunc( windowSize * ECGData$samplingFreq ) / ms.to.seconds # 
 
 
-  # Preprocessing the signal  
-  preproInfo <- Preprocessor.PanTompkins(ECGData, channel, windowSize.samples)
+  
 
 
   # Beat detection
   channel.size <- length(ECGData$lead[[channel]]$data)
 
   if (algorithm == 1 || algorithm == 2){
-    
+    # Preprocessing the signal    
+    preproInfo <- BeatDetectorPreprocessor(ECGData, channel, windowSize.samples)
+
     if (algorithm == 1){
-      peaks <- PanTompkins(ECGData, preproInfo, channel.size, windowSize.samples, channel)  
+      peaks <- BeatDetectorPanTompkins(ECGData, preproInfo, channel.size, windowSize.samples, channel)  
     }
     if (algorithm == 2){
-      peaks <- HamiltonTompkins(ECGData, preproInfo, channel.size, windowSize.samples, channel)
+      peaks <- BeatDetectorHamiltonTompkins(ECGData, preproInfo, channel.size, windowSize.samples, channel)
     }
   }
   else{
     if(algorithm == 3){
-      peaks <- Phasor(ECGData, channel)
+      peaks <- BeatDetectorPhasor(ECGData, channel)
     }
     else{
-      if (algorithm == 4){
-        peaks <- WaveletDetector(ECGData, channel)
+      if (algorithm == 4){        
+        #peaks <- BeatDetectorWavelet(ECGData, channel)
+        ECGData <- BeatDetectorWavelet(ECGData, channel)
+        return(ECGData)
       }
       else {
         if (algorithm == 5){ # combinacion algoritmos anteriores PRUEBA
 
-          peaksPan <- PanTompkins(ECGData, preproInfo, channel.size, windowSize.samples, channel) 
-          peaksHam <- HamiltonTompkins(ECGData, preproInfo, channel.size, windowSize.samples, channel)
-          peaksPhasor <- Phasor(ECGData, channel)
-          peaksWavelet <-  WaveletDetector(ECGData, channel)
+          peaksPan <- BeatDetectorPanTompkins(ECGData, preproInfo, channel.size, windowSize.samples, channel) 
+          peaksHam <- BeatDetectorHamiltonTompkins(ECGData, preproInfo, channel.size, windowSize.samples, channel)
+          peaksPhasor <- BeatDetectorPhasor(ECGData, channel)
+          peaksWavelet <-  BeatDetectorWavelet(ECGData, channel)
 
           length.higher <- max(length(peaksPan$positions), length(peaksHam$positions), length(peaksPhasor$positions), length(peaksWavelet$positions))
           finalPositions <- mat.or.vec(length.higher, 1)

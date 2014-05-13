@@ -12,33 +12,41 @@ PlotDelineation
   According to the parameters it receives, plot the signal with the corresponding annotations. 
 }
 \usage{
-  PlotDelineation(ECGData, signalToPlot, showNqrs = TRUE, showQRSDelineation= TRUE, showNPreNpost=TRUE, showNLastNFirst = TRUE, pointsOverTheSignal = TRUE, samplesToShow=5000, ...)
+  PlotDelineation(ECGData, scale = 0, showNqrs = TRUE, showQRSDelineation= TRUE, showNPreNPost=TRUE, showNLastNFirst = TRUE, showPDelineation = TRUE, 
+    showTDelineation = TRUE, samplesToShow=5000, plotType = "l", ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{ECGData}{
   ECG data model
 }
-  \item{signalToPlot}{
-  the signal to be plotted
-}
+  
+  \item{scale}{
+    The wavelet scale to plot the result
+  }
   \item{showNqrs}{
-    whether to show qrs fiducial marks
+    whether to show or not qrs fiducial marks
   }
   \item{showQRSDelineation}{
-    whether to show QRS delineation
+    whether to show or not QRS delineation
   }
-  \item{showNPreNpost}{
-    whether to show n.pre and n.post positions
+  \item{showNPreNPost}{
+    whether to show or not Npre and Npost annotations
   }
   \item{showNLastNFirst}{
-    whether to show n.first and n.last.positions
+    whether to show or not NFirst and NLast annotations
   }
-  \item{pointsOverTheSignal}{
-    If it is true, show the height of the points over the signal to be plotted
+  \item{showPDelineation}{
+    whether to show or not P delineation
+  }
+  \item{showTDelineation}{
+   whether to show or not T delineation 
   }
   \item{samplesToShow}{
     Number of samples that are shown in each iteration
+  }
+  \item{plotType}{
+    It defines the type of plot
   }
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
